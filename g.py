@@ -35,9 +35,9 @@ else:
     
     print('\n--- abilities : name ---\n')
     names = []
-    for item in data["names"]:
-        print(item['abilities']['name'],":", item["name"])
-        names.append( item["name"] )
+for item in data["names"]:
+    print(item['abilities']['name'],":", item["name"])
+    names.append( item["name"] )
         
     print('\n--- after for-loop ---\n')
     print(names)
@@ -82,42 +82,22 @@ def fetch_pokemon_data(pokemon_name):
 def calculate_average_weight(pokemon_list):
     #Pokemon list is a list of Pokemon Weights
     pokemon_list = []
-    return average(pokemon_list)
+        return average(pokemon_list)
 
 pokemon_names = ["pikachu", "bulbasaur", "charmander"]
 
-#Expected Outcome: The script should display the names and abilities of the three chosen 
-#Pokémon and their average weight. The function should
-#correctly calculate and return the average weight based on the data fetched from the API. 
-
-
-#2. Exploring the Digital Cosmos with Python and the Web
-#Problem Statement: Imagine you are a developer tasked with creating a feature 
-#for a web application that provides users with insightful information about various space objects.
-#Your application will fetch data from a publicly available space API, process this data, and display it in a user-friendly format.
-#Task 1: Set up a Python Virtual Environment and Install Required Packages
-#Create a new virtual environment in Python. Activate the virtual environment.
-#Install the `requests` package for making HTTP requests.
-#Expected Outcome: A successfully created and activated virtual 
-#environment with the `requests` package installed.
-#Task 2: Fetch Data from a Space API Write a Python 
-#script that makes a GET request to a space API 
-#(e.g., [The Solar System OpenData](https://api.le-systeme-solaire.net/en/)) to fetch data about planets.
-#Parse the JSON response and extract information about each planet, such as its name, mass, and orbit period.
 import requests
 
 def fetch_planet_data():
     url = "https://api.le-systeme-solaire.net/rest/bodies/"
     response = requests.get(url)
     planets = response.json()['bodies']
-
-    #process each planet info
-    for planet in planets:
-        if planet['isPlanet']:
-            name = #get planet English name
-            mass = #get planet mass
-            orbit_period = #get planet orbit period
-            print(f"Planet: {name}, Mass: {mass}, Orbit Period: {orbit_period} days")
+for planet in planets:
+    if planet['isPlanet']:
+        name = #get planet English name
+        mass = #get planet mass
+        orbit_period = #get planet orbit period
+        print(f"Planet: {name}, Mass: {mass}, Orbit Period: {orbit_period} days")
 
 fetch_planet_data()
 
@@ -125,7 +105,6 @@ fetch_planet_data()
 #such as finding the planet with the longest orbit period or the heaviest planet. 
 length(orbit_period)
 import requests
-
 def fetch_planet_data():
     url = "https://api.le-systeme-solaire.net/rest/bodies/"
     response = requests.get(url)
